@@ -1,4 +1,4 @@
-# helloworld-flask-app
+# HelloWorld Flask App
 This is a Hello World web application written in Flask.
 
 ## Prerequisites
@@ -21,8 +21,8 @@ To install python3 and pip3 on ubuntu operating system using apt package manager
 ### Bootstrap Virtual Environment
 It is a best practice to create a virtual environment for your application to avoid any conflict in dependencies between multiple applications. Hence, We will need to create a virtual environment (using python's default package "venv") and install all the dependencies.
 ```
-python3 -m venv helloworld-app-venv # on Windows, use "python -m venv venv" instead
-source helloworld-app-venv/bin/activate # on Windows, use "venv\Scripts\activate" instead
+python3 -m venv helloworld-app-venv # on Windows, use "python -m venv helloworld-app-venv" instead
+source helloworld-app-venv/bin/activate # on Windows, use "helloworld-app-venv\Scripts\activate" instead
 pip install -r requirements.txt
 ```
 
@@ -47,12 +47,18 @@ To check the webapp, open a browser and go to URL -
 
 ## Run and Test the App on Docker
 1. Clone the repository and switch inside the directory.
-2. Build the docker image using below command: 
-    `docker build . -t helloworld-app-img:latest`
+2. Build the docker image using below command:
+```
+    docker build . -t helloworld-app-img:latest
+```
 3. To run the docker container from built image in the background with port mapping, use below command: 
-    `docker run -d -p 5000:8080 --name helloworld-container helloworld-app-img`
+```
+    docker run -d -p 5000:8080 --name helloworld-container helloworld-app-img
+```
 4. To test the app on host machine, open the browser or use curl command: 
-    `curl http://localhost:5000`
+```
+    curl http://localhost:5000
+```
 
 **Note:** 
 - . tells docker about the path of the Dockerfile.
